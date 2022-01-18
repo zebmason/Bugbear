@@ -1,6 +1,7 @@
 ﻿using Bugbear.Core.Graph;
 using Gremlin.Net.Structure;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Bugbear.Graph.SimpleGraphDB
 {
@@ -20,6 +21,53 @@ namespace Bugbear.Graph.SimpleGraphDB
             return $"GraphDB[vertices:{_vertices.Count} edges:{_edges.Count}]";
         }
 
+        #region Getters
+        public IReadOnlyList<Vertex> Vertices(params object[] vertexIds)
+        {
+            if (vertexIds.Length == 0)
+                return _vertices;
+
+            var vertices = new List<Vertex>();
+            foreach (var vertex in _vertices)
+            {
+                if (!vertexIds.Contains(vertex.Id))
+                {
+                    vertices.Add(vertex);
+                }
+            }
+
+            return vertices;
+        }
+
+        public IReadOnlyList<Edge> Edges(params object[] edgeIds)
+        {
+            if (edgeIds.Length == 0)
+                return _edges;
+
+            var edges = new List<Edge>();
+            foreach (var edge in _edges)
+            {
+                if (!edgeIds.Contains(edge.Id))
+                {
+                    edges.Add(edge);
+                }
+            }
+
+            return edges;
+        }
+
+        public IReadOnlyDictionary<object, VertexProperty> VertexProps(string propertyKey)
+        {
+            return _vertexProps[propertyKey];
+        }
+
+        public IReadOnlyDictionary<object, Property> EdgeProps(string propertyKey)
+        {
+            return _edgeProps[propertyKey];
+        }
+        #endregion
+
+        #region Builders
         public IVertexBuilder AddVertex(object id, string label)
         {
             var vertex = new Vertex(id, label);
@@ -41,6 +89,7 @@ namespace Bugbear.Graph.SimpleGraphDB
                 _vertexProps[label] = new Dictionary<object, VertexProperty>();
             }
 
+            // \todo what is the first argument to VertexProperty?
             _vertexProps[label][vertex] = new VertexProperty(vertex.Id, label, value, vertex);
         }
 
@@ -53,5 +102,6 @@ namespace Bugbear.Graph.SimpleGraphDB
 
             _edgeProps[label][edge] = new Property(label, value, edge);
         }
+        #endregion
     }
 }
