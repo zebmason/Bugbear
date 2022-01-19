@@ -1,4 +1,5 @@
 ﻿using Bugbear.Core.Graph;
+using Bugbear.Graph.Wrapper;
 using Gremlin.Net.Structure;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,20 +1,9 @@
 ﻿using Gremlin.Net.Structure;
-using System.Collections.Generic;
 
 namespace Bugbear.Core.Graph
 {
-    public interface IGraphDB
+    public interface IBuildGraphDB
     {
-        #region Getters
-        IReadOnlyList<Vertex> Vertices(params object[] vertexIds);
-
-        IReadOnlyList<Edge> Edges(params object[] edgeIds);
-
-        IReadOnlyDictionary<object, VertexProperty> VertexProps(string propertyKey);
-
-        IReadOnlyDictionary<object, Property> EdgeProps(string propertyKey);
-        #endregion
-
         #region Builders
         IVertexBuilder AddVertex(object id, string label);
 

@@ -5,9 +5,9 @@ namespace Bugbear.Core.Graph
     public class Builder<U> : IBuilder<U>
     {
         public U ToBuild { get; }
-        protected readonly IGraphDB _graph;
+        protected readonly IBuildGraphDB _graph;
 
-        public Builder(U vertex, IGraphDB graph)
+        public Builder(U vertex, IBuildGraphDB graph)
         {
             ToBuild = vertex;
             _graph = graph;
@@ -16,7 +16,7 @@ namespace Bugbear.Core.Graph
 
     public class VertexBuilder : Builder<Vertex>, IVertexBuilder
     {
-        public VertexBuilder(Vertex vertex, IGraphDB graph)
+        public VertexBuilder(Vertex vertex, IBuildGraphDB graph)
             : base(vertex, graph)
         {
         }
@@ -35,7 +35,7 @@ namespace Bugbear.Core.Graph
 
     public class EdgeBuilder : Builder<Edge>, IEdgeBuilder
     {
-        public EdgeBuilder(Edge edge, IGraphDB graph)
+        public EdgeBuilder(Edge edge, IBuildGraphDB graph)
             : base(edge, graph)
         {
         }

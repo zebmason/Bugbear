@@ -1,5 +1,4 @@
-﻿using Bugbear.Core.Graph;
-using Bugbear.Core.Wrapper;
+﻿using Bugbear.Core.Wrapper;
 using Gremlin.Net.Structure;
 
 namespace Bugbear.Graph.Wrapper

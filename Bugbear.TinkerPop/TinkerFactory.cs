@@ -4,7 +4,7 @@ namespace Bugbear.TinkerPop
 {
     public static class TinkerFactory
     {
-        public static void CreateModern(IGraphDB graph)
+        public static void CreateModern(IBuildGraphDB graph)
         {
             var marko = graph.AddVertex(1, "person").Add("name", "marko").Add("age", 29);
             var vadas = graph.AddVertex(2, "person").Add("name", "vadas").Add("age", 27);
