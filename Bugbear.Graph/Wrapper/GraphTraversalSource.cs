@@ -22,6 +22,7 @@
 #endregion
 
 using Bugbear.Core.Wrapper;
+using Gremlin.Net.Process.Traversal;
 using Gremlin.Net.Structure;
 
 namespace Bugbear.Graph.Wrapper
@@ -33,6 +34,46 @@ namespace Bugbear.Graph.Wrapper
         public GraphTraversalSource(IGraphDB graph)
         {
             _graph = graph;
+        }
+
+        public IGraphTraversal<Edge, Edge> AddE(ITraversal edgeLabelTraversal)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<Edge, Edge> AddE(string label)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<Vertex, Vertex> AddV(string label)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<Vertex, Vertex> AddV(ITraversal vertexLabelTraversal)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<Vertex, Vertex> AddV()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<Edge, Edge> E(params object[] edgesIds)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<S, S> Inject<S>(params S[] starts)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IGraphTraversal<S, S> Io<S>(string file)
+        {
+            throw new System.NotImplementedException();
         }
 
         public IGraphTraversal<Vertex, Vertex> V(params object[] vertexIds)

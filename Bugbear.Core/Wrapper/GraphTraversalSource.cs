@@ -21,6 +21,7 @@
 
 #endregion
 
+using Gremlin.Net.Process.Traversal;
 using Gremlin.Net.Structure;
 
 namespace Bugbear.Core.Wrapper
@@ -32,6 +33,46 @@ namespace Bugbear.Core.Wrapper
         public GraphTraversalSource(Gremlin.Net.Process.Traversal.GraphTraversalSource source)
         {
             _source = source;
+        }
+
+        public IGraphTraversal<Edge, Edge> AddE(ITraversal edgeLabelTraversal)
+        {
+            return new GraphTraversal<Edge, Edge>(_source.AddE(edgeLabelTraversal));
+        }
+
+        public IGraphTraversal<Edge, Edge> AddE(string label)
+        {
+            return new GraphTraversal<Edge, Edge>(_source.AddE(label));
+        }
+
+        public IGraphTraversal<Vertex, Vertex> AddV(string label)
+        {
+            return new GraphTraversal<Vertex, Vertex>(_source.AddV(label));
+        }
+
+        public IGraphTraversal<Vertex, Vertex> AddV(ITraversal vertexLabelTraversal)
+        {
+            return new GraphTraversal<Vertex, Vertex>(_source.AddV(vertexLabelTraversal));
+        }
+
+        public IGraphTraversal<Vertex, Vertex> AddV()
+        {
+            return new GraphTraversal<Vertex, Vertex>(_source.AddV());
+        }
+
+        public IGraphTraversal<Edge, Edge> E(params object[] edgesIds)
+        {
+            return new GraphTraversal<Edge, Edge>(_source.E(edgesIds));
+        }
+
+        public IGraphTraversal<S, S> Inject<S>(params S[] starts)
+        {
+            return new GraphTraversal<S, S>(_source.Inject(starts));
+        }
+
+        public IGraphTraversal<S, S> Io<S>(string file)
+        {
+            return new GraphTraversal<S, S>(_source.Io<S>(file));
         }
 
         public IGraphTraversal<Vertex, Vertex> V(params object[] vertexIds)
