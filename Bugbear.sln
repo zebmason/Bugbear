@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bugbear.Tinkerpop.Tests", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D4710238-B4DD-4708-8BB1-FA9F86DE0904}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checker", "Checker\Checker.csproj", "{76903FB1-D62F-4B6B-86FF-554E6B171562}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{676C0D7A-0990-4D05-9604-D4DDBCC1F22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{676C0D7A-0990-4D05-9604-D4DDBCC1F22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{676C0D7A-0990-4D05-9604-D4DDBCC1F22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76903FB1-D62F-4B6B-86FF-554E6B171562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76903FB1-D62F-4B6B-86FF-554E6B171562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76903FB1-D62F-4B6B-86FF-554E6B171562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76903FB1-D62F-4B6B-86FF-554E6B171562}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
