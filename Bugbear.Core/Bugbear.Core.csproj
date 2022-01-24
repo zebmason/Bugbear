@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gremlin.Net" Version="3.4.7" />
+    <ProjectReference Include="..\Bugbear.Gremlin.Net\Bugbear.Gremlin.Net.csproj" />
   </ItemGroup>
 
 </Project>
