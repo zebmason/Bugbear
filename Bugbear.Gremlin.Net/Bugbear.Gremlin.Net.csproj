@@ -34,7 +34,7 @@ limitations under the License.
     <Authors>Apache TinkerPop</Authors>
     <Description>Bugbear.Gremlin.Net is a minor fork of Gremlin.Net, https://github.com/apache/tinkerpop, to allow for overriding of certain GraphTraversal and GraphTraversalSource methods.</Description>
     <SignAssembly>true</SignAssembly>
-    <PackageId>Gremlin.Net</PackageId>
+    <PackageId>Bugbear.Gremlin.Net</PackageId>
     <PackageTags>gremlin;tinkerpop;apache</PackageTags>
     <PackageProjectUrl>https://github.com/zebmason/Bugbear</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
