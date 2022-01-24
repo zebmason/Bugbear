@@ -29,6 +29,11 @@ using Gremlin.Net.Process.Traversal.Strategy.Decoration;
 using Gremlin.Net.Structure;
 
 // THIS IS A GENERATED FILE - DO NOT MODIFY THIS FILE DIRECTLY - see pom.xml
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
+// Forked by zebmason to make public methods virtual
+//
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 namespace Gremlin.Net.Process.Traversal
 {
 #pragma warning disable 1591
@@ -42,13 +47,13 @@ namespace Gremlin.Net.Process.Traversal
         /// <summary>
         ///     Gets or sets the traversal strategies associated with this graph traversal source.
         /// </summary>
-        public ICollection<ITraversalStrategy> TraversalStrategies { get; set; }
+        virtual public ICollection<ITraversalStrategy> TraversalStrategies { get; set; }
 
         /// <summary>
         ///     Gets or sets the <see cref="Traversal.Bytecode" /> associated with the current state of this graph traversal
         ///     source.
         /// </summary>
-        public Bytecode Bytecode { get; set; }
+        virtual public Bytecode Bytecode { get; set; }
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="GraphTraversalSource" /> class.
@@ -73,7 +78,7 @@ namespace Gremlin.Net.Process.Traversal
         }
 
 
-        public GraphTraversalSource With(string key)
+        virtual public GraphTraversalSource With(string key)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -81,7 +86,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource With(string key, object value)
+        virtual public GraphTraversalSource With(string key, object value)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -89,7 +94,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithBulk(bool useBulk)
+        virtual public GraphTraversalSource WithBulk(bool useBulk)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -97,7 +102,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithPath()
+        virtual public GraphTraversalSource WithPath()
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -105,7 +110,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(object initialValue)
+        virtual public GraphTraversalSource WithSack(object initialValue)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -113,7 +118,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(object initialValue, IBinaryOperator mergeOperator)
+        virtual public GraphTraversalSource WithSack(object initialValue, IBinaryOperator mergeOperator)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -121,7 +126,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(object initialValue, IUnaryOperator splitOperator)
+        virtual public GraphTraversalSource WithSack(object initialValue, IUnaryOperator splitOperator)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -129,7 +134,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(object initialValue, IUnaryOperator splitOperator, IBinaryOperator mergeOperator)
+        virtual public GraphTraversalSource WithSack(object initialValue, IUnaryOperator splitOperator, IBinaryOperator mergeOperator)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -137,7 +142,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(ISupplier initialValue)
+        virtual public GraphTraversalSource WithSack(ISupplier initialValue)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -145,7 +150,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(ISupplier initialValue, IBinaryOperator mergeOperator)
+        virtual public GraphTraversalSource WithSack(ISupplier initialValue, IBinaryOperator mergeOperator)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -153,7 +158,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(ISupplier initialValue, IUnaryOperator splitOperator)
+        virtual public GraphTraversalSource WithSack(ISupplier initialValue, IUnaryOperator splitOperator)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -161,7 +166,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSack(ISupplier initialValue, IUnaryOperator splitOperator, IBinaryOperator mergeOperator)
+        virtual public GraphTraversalSource WithSack(ISupplier initialValue, IUnaryOperator splitOperator, IBinaryOperator mergeOperator)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -169,7 +174,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSideEffect(string key, object initialValue)
+        virtual public GraphTraversalSource WithSideEffect(string key, object initialValue)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -177,7 +182,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSideEffect(string key, object initialValue, IBinaryOperator reducer)
+        virtual public GraphTraversalSource WithSideEffect(string key, object initialValue, IBinaryOperator reducer)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -185,7 +190,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSideEffect(string key, ISupplier initialValue)
+        virtual public GraphTraversalSource WithSideEffect(string key, ISupplier initialValue)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -193,7 +198,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithSideEffect(string key, ISupplier initialValue, IBinaryOperator reducer)
+        virtual public GraphTraversalSource WithSideEffect(string key, ISupplier initialValue, IBinaryOperator reducer)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -201,7 +206,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithStrategies(params ITraversalStrategy[] traversalStrategies)
+        virtual public GraphTraversalSource WithStrategies(params ITraversalStrategy[] traversalStrategies)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -211,7 +216,7 @@ namespace Gremlin.Net.Process.Traversal
             return source;
         }
 
-        public GraphTraversalSource WithoutStrategies(params Type[] traversalStrategyClasses)
+        virtual public GraphTraversalSource WithoutStrategies(params Type[] traversalStrategyClasses)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                                                   new Bytecode(Bytecode));
@@ -222,7 +227,7 @@ namespace Gremlin.Net.Process.Traversal
         }
 
         [Obsolete("Use the Bindings class instead.", false)]
-        public GraphTraversalSource WithBindings(object bindings)
+        virtual public GraphTraversalSource WithBindings(object bindings)
         {
             return this;
         }
@@ -236,7 +241,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     <see cref="GraphTraversal{SType, EType}" />.
         /// </param>
         /// <returns>A <see cref="GraphTraversalSource" /> configured to use the provided <see cref="IRemoteConnection" />.</returns>
-        public GraphTraversalSource WithRemote(IRemoteConnection remoteConnection)
+        virtual public GraphTraversalSource WithRemote(IRemoteConnection remoteConnection)
         {
             var source = new GraphTraversalSource(new List<ITraversalStrategy>(TraversalStrategies),
                 new Bytecode(Bytecode));
@@ -248,7 +253,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Add a GraphComputer class used to execute the traversal.
         ///     This adds a <see cref="VertexProgramStrategy" /> to the strategies.
         /// </summary>
-        public GraphTraversalSource WithComputer(string graphComputer = null, int? workers = null, string persist = null,
+        virtual public GraphTraversalSource WithComputer(string graphComputer = null, int? workers = null, string persist = null,
             string result = null, ITraversal vertices = null, ITraversal edges = null,
             Dictionary<string, dynamic> configuration = null)
         {
@@ -260,7 +265,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the E step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Edge, Edge> E(params object[] edgesIds)
+        virtual public GraphTraversal<Edge, Edge> E(params object[] edgesIds)
         {
             var traversal = new GraphTraversal<Edge, Edge>(TraversalStrategies, new Bytecode(Bytecode));
             var args = new List<object>(0 + edgesIds.Length) {};
@@ -273,7 +278,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the V step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Vertex, Vertex> V(params object[] vertexIds)
+        virtual public GraphTraversal<Vertex, Vertex> V(params object[] vertexIds)
         {
             var traversal = new GraphTraversal<Vertex, Vertex>(TraversalStrategies, new Bytecode(Bytecode));
             var args = new List<object>(0 + vertexIds.Length) {};
@@ -286,7 +291,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the addE step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Edge, Edge> AddE(string label)
+        virtual public GraphTraversal<Edge, Edge> AddE(string label)
         {
             var traversal = new GraphTraversal<Edge, Edge>(TraversalStrategies, new Bytecode(Bytecode));
                 traversal.Bytecode.AddStep("addE", label);
@@ -297,7 +302,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the addE step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Edge, Edge> AddE(ITraversal edgeLabelTraversal)
+        virtual public GraphTraversal<Edge, Edge> AddE(ITraversal edgeLabelTraversal)
         {
             var traversal = new GraphTraversal<Edge, Edge>(TraversalStrategies, new Bytecode(Bytecode));
                 traversal.Bytecode.AddStep("addE", edgeLabelTraversal);
@@ -308,7 +313,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the addV step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Vertex, Vertex> AddV()
+        virtual public GraphTraversal<Vertex, Vertex> AddV()
         {
             var traversal = new GraphTraversal<Vertex, Vertex>(TraversalStrategies, new Bytecode(Bytecode));
                 traversal.Bytecode.AddStep("addV");
@@ -319,7 +324,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the addV step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Vertex, Vertex> AddV(string label)
+        virtual public GraphTraversal<Vertex, Vertex> AddV(string label)
         {
             var traversal = new GraphTraversal<Vertex, Vertex>(TraversalStrategies, new Bytecode(Bytecode));
                 traversal.Bytecode.AddStep("addV", label);
@@ -330,7 +335,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the addV step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<Vertex, Vertex> AddV(ITraversal vertexLabelTraversal)
+        virtual public GraphTraversal<Vertex, Vertex> AddV(ITraversal vertexLabelTraversal)
         {
             var traversal = new GraphTraversal<Vertex, Vertex>(TraversalStrategies, new Bytecode(Bytecode));
                 traversal.Bytecode.AddStep("addV", vertexLabelTraversal);
@@ -341,7 +346,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the inject step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<S, S> Inject<S>(params S[] starts)
+        virtual public GraphTraversal<S, S> Inject<S>(params S[] starts)
         {
             var traversal = new GraphTraversal<S, S>(TraversalStrategies, new Bytecode(Bytecode));
             var args = new List<object>(0 + starts.Length) {};
@@ -354,7 +359,7 @@ namespace Gremlin.Net.Process.Traversal
         ///     Spawns a <see cref="GraphTraversal{SType, EType}" /> off this graph traversal source and adds the io step to that
         ///     traversal.
         /// </summary>
-        public GraphTraversal<S, S> Io<S>(string file)
+        virtual public GraphTraversal<S, S> Io<S>(string file)
         {
             var traversal = new GraphTraversal<S, S>(TraversalStrategies, new Bytecode(Bytecode));
                 traversal.Bytecode.AddStep("io", file);

@@ -21,13 +21,11 @@
 
 #endregion
 
-using Bugbear.Core.Wrapper;
-using Gremlin.Net.Process.Traversal;
 using Gremlin.Net.Structure;
 
 namespace Bugbear.Graph.Wrapper
 {
-    public class GraphTraversalSource : IGraphTraversalSource
+    public class GraphTraversalSource : Gremlin.Net.Process.Traversal.GraphTraversalSource
     {
         private readonly IGraphDB _graph;
 
@@ -36,47 +34,47 @@ namespace Bugbear.Graph.Wrapper
             _graph = graph;
         }
 
-        public IGraphTraversal<Edge, Edge> AddE(ITraversal edgeLabelTraversal)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Edge, Edge> AddE(Gremlin.Net.Process.Traversal.ITraversal edgeLabelTraversal)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<Edge, Edge> AddE(string label)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Edge, Edge> AddE(string label)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<Vertex, Vertex> AddV(string label)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Vertex, Vertex> AddV(string label)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<Vertex, Vertex> AddV(ITraversal vertexLabelTraversal)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Vertex, Vertex> AddV(Gremlin.Net.Process.Traversal.ITraversal vertexLabelTraversal)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<Vertex, Vertex> AddV()
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Vertex, Vertex> AddV()
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<Edge, Edge> E(params object[] edgesIds)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Edge, Edge> E(params object[] edgesIds)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<S, S> Inject<S>(params S[] starts)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<S, S> Inject<S>(params S[] starts)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<S, S> Io<S>(string file)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<S, S> Io<S>(string file)
         {
             throw new System.NotImplementedException();
         }
 
-        public IGraphTraversal<Vertex, Vertex> V(params object[] vertexIds)
+        public override Gremlin.Net.Process.Traversal.GraphTraversal<Vertex, Vertex> V(params object[] vertexIds)
         {
             return new GraphTraversal<Vertex, Vertex>(_graph, _graph.Vertices(vertexIds));
         }
